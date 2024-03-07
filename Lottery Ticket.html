@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <title>Lottery Draw</title>
+</head>
+<style>
+  body {
+    background-image: url(https://img.freepik.com/free-vector/ribbon-cutting-ceremony-poster-with-red-curtains-vector-illustration_91128-938.jpg?w=1060&t=st=1678547070~exp=1678547670~hmac=9df0f212155713a9ec2518316c205cf30ba37e6536e8697122ac167f8ca7d10b);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  h1 {
+    color: beige;
+    margin-bottom: 20px;
+  }
+  
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    width: 30px;
+    border-top: 2px solid #ccc;
+    margin: 20px auto 25px auto;
+  }
+  
+  button {
+    background-color: red;
+    border-radius: 20px;
+    color: whitesmoke;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px 0 rgba(10, 10, 10, 0.80), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: lightcoral;
+  }
+  
+  .p {
+    background-color: rgba(194, 116, 116, 0.636);
+    color: whitesmoke;
+    font-size: 5vw;
+    text-align: center;
+    margin-bottom: 5vh;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  #btn {
+    background-color: red;
+    border-radius: 20px;
+    color: whitesmoke;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px 0 rgba(10, 10, 10, 0.80), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  #btn:hover {
+    background-color: lightcoral;
+  }
+  
+  .modal-header {
+    background-color: aliceblue;
+    border-bottom: none;
+  }
+  
+  .modal-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(10, 10, 10, 0.80), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
+  }
+</style>
+<body>
+  <div class="container text-center">
+    <h1 class="mb-4">Lottery Number Generator</h1>
+    <hr>
+    <p id="para" class="p">???</p>
+    <button onclick="generate()" data-toggle="modal" data-target=".modal" id="btn">Lucky Winner</button>
+  </div>
+  
+  <div class="modal fade">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">The Winner</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p id="numbers" class="clr text-center"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function generate() {
+      var array = [7654, 6543, 4329, 8532, 1472, 5021, 9438, 2953, 3070, 4165];
+      var y = array[Math.floor(Math.random() * array.length)];
+      document.getElementById('numbers').innerHTML = y;
+      document.getElementById('para').innerHTML = y;
+    }
+  </script>
+</body>
+</html>
